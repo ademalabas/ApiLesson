@@ -69,7 +69,7 @@ Bizler bu zamana kadar sizler ile birlikte POSTMAN üzerinde farklı doc. sahip 
        2 Expected datalari tanimlamam lazim Expected datalari set etmem lazim
        Test caseden alinir Doc tan alinir (Suan icin bu step ignore yapilacak
 
-       3 Request gonder
+       3 Request gonder   Post manmdeki SEND butonu
 
        4 Assertion islemi
         */
