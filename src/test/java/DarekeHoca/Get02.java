@@ -95,10 +95,10 @@ public class Get02 {
 
         // Test 4: Headers dan Via nın "1.1 vegur"
 
-        //System.out.println("Butun Headers: " + response.getHeaders()); // Bütün headersları alabiliyoruz.
+        System.out.println("Butun Headers: " + response.getHeaders()); // Bütün headersları alabiliyoruz.
 
         // Tek bir tane headera ulaşabilmek için ise;
-        //System.out.println("Single Header: " + response.getHeader("Via"));
+        System.out.println("Single Header: " + response.getHeader("Via"));
         assertEquals("1.1 vegur",response.getHeader("Via"));  //assertEquals()  ---> içine girilen değerler biribiri ile eşit ise TRUE döner ve böylece Testimiz PASS olmuş olur
 
 
