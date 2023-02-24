@@ -9,6 +9,38 @@ import static io.restassured.RestAssured.given;
 public class Get01 {
 
     /*
+Bizler bu zamana kadar sizler ile birlikte POSTMAN üzerinde farklı doc. sahip olan
+        çeşitli API lere request attık.
+        REq atarken HTTP methodların da GET, POST; PUT, PATCH and DELETE methoslarınınkullandık.
+
+
+
+        Bizler markete genle olarak POSTMAN i bir otomasyon toolu olarak değil manule test tool u olarka
+        kullanıyoruz. Fakat dersler de işlediğimiz üsere PSTAMN ile test otomasyonu yapabiliyoruz.
+
+        API testlerimiz bundan sonra REstAssured Lib. kullanrak yapacğaız.
+
+
+        TEST leri yapabiliyor olmak içn sizlerin bir doc. ihtiyacı vardır.
+        Biz test eng. bu doc. göre API leri nasıl kullanacağımız veya nasıl test edeceğimizi öğreniriz.
+
+        Ve doc. lara göre çeşitli seneryoalr oluşturabiliriz. Tıpkı ne gibi?
+        Selenium Web UI teslteri koştuğumuz gibi.
+
+        Test Case:
+
+         --> Expected Result
+
+
+         ---> Actual Result      ====>>>>> Response dan alacağım.
+
+
+        Gherkin Lang.
+
+            Given ---> testin yapılabilmesi için ön hazırlık/ön şart
+            When ---> Action --> Gerçekleştirilecek Eylemler
+            Then ---> Assertion için kullanıyoruz
+            And  ---> Öncesinde kullanılan keyword u etkisinin hala devame titğini zilere gösterir.
 
      */
 
@@ -27,7 +59,7 @@ public class Get01 {
 
      */
 
-    @Test
+    @Test   // -> it is like it main method
     public void get01(){
        /*
        4 tane adimimiz var
@@ -72,16 +104,19 @@ public class Get01 {
         //  Test 03 Status Line
         response.then().assertThat().statusLine("HTTP/1.1 200 OK");
 
-
+        //Status Code u konsola nasıl yazdırabiliriz?
         System.out.println("Status Code :" +response.getStatusCode());
 
-
+        // Contetnt Type ı konsola nasıl yazdırabilirim?
         System.out.println("Content Type :"+ response.getContentType());
 
+        //Status Line ı nasıl yazdırabilrim
         System.out.println("Status line : " + response.getStatusLine());
 
+        //REsponse Time ı nasıl yazdırabilirim
         System.out.println("Response Time : " + response.getTime());
 
+        //Headers ları konsola nasıl yazdıarbilriim?
         System.out.println("Headers : " + response.getHeaders());
 
 
