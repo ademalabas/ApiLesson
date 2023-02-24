@@ -1,11 +1,10 @@
-package getRequesr;
+package DarekeHoca;
+
 
 import baseURLs.JsonPlaseHoldrBaseURL;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
-import org.testng.Assert;
-
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -23,12 +22,14 @@ public class Get03 extends JsonPlaseHoldrBaseURL {
 		And
             Content Type ın "application/json" olduğunu assert et
 		And
-		    title ın "quis ut nam facilis et officia qui" olduğunu verify et.,
+		    title ın “quis ut nam facilis et officia qui” olduğunu verify et.,
 		And
-		    "completed" ın false olduğunu verify et.
+		    “completed” ın false olduğunu verify et.
 		And
-		    "userId" in 1 olduğunu verify et
+		    “userId” in 1 olduğunu verify et
      */
+
+
     /*
     {
     "userId": 1,
@@ -38,39 +39,38 @@ public class Get03 extends JsonPlaseHoldrBaseURL {
 }
      */
 
-
-
     @Test
-    public void test03() {
+    public void get03(){
 
-        /*
-        1)Set Url
-        2)Expected Data  suan ignored
-        3)Send Requeat
-        4)Assertion
+       /*
+       1) Set URL
+       2) Set Expected Data
+       3) Send a Request
+       4) Assertion
+        */
 
-         */
-
-
-// Step 1  set URL  "https://jsonplaceholder.typicode.com/todos/2"
-
+    // Step 1: Set URL:  https://jsonplaceholder.typicode.com/todos/2
         specification.pathParams("todosPath","todos",
                 "idPath","2");
-        // Step 2 Expected Data  ignore ediyoruz
 
 
-        // Step 3  send request
+
+    // Step 2: Set the Expected Data (ignored)
+
+
+    //Step 3: Send Request
+
         Response response = given().
                 spec(specification).
                 when().
                 get("/{todosPath}/{idPath}");
 
-        response.prettyPrint(); // like sout
 
-        // Step 4: Assertion operations
+        response.prettyPrint(); // like syso
 
+    // Step 4: Assertion operations
 
-         /*
+        /*
          Then
             Status Code un "200" olduğunu Assert et
 		And
@@ -107,31 +107,5 @@ public class Get03 extends JsonPlaseHoldrBaseURL {
                         "userId",equalTo(1));
 
 
-
-
-
-
-
-
-        /*
-        String URL = "https://jsonplaceholder.typicode.com/todos/2";
-        Response response = given().when().get(URL);
-
-        response.prettyPrint();
-
-        response.then().assertThat().statusCode(200)
-                .contentType("application/json")
-                .body("title", equalTo("quis ut nam facilis et officia qui"))
-                .body("completed", equalTo(false))
-                .body("userId", equalTo(1));
-
-        Assert.assertTrue(response.asString().contains("\"completed\": false"));
     }
-
-*/
-
-    }
-
-    }
-
-
+}
