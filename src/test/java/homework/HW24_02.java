@@ -27,6 +27,18 @@ public class HW24_02 {
         rs.then().assertThat().headers("Server", equalTo("cloudflare"));
         rs.then().assertThat().body("title", containsString("qui"));
 
+/*
+        https://jsonplaceholder.typicode.com/todos/2/*Status code is 200
+        And "completed" is false
+        And "userId" is
+        1 And "title" is "quis ut nam facilis et officia qui«
+        And header "Via" is "1.1 Vegur«
+        And header "Server" is "cloudflare«
+        And title is contains "qui«
+                */
+
+
+
 
     }
 }
