@@ -58,6 +58,13 @@ public class Get03 extends JsonPlaseHoldrBaseURL {
                 "idPath","2");
         // Step 2 Expected Data  ignore ediyoruz
 
+        /*
+        Expected data lari nasil setleyebiliriz
+        -map
+        -array
+        -list
+         */
+
 
         // Step 3  send request
         Response response = given().
