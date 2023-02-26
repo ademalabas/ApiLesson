@@ -52,9 +52,11 @@ public class Get05 extends TheMovieDBBaseURL {
         // Step 2 Expected Data  ignore ediyoruz
 
 
+
         // Step 3  send request
         Response response = given().spec(specification)
                 .when().get("/{moviePath}/{popularPath}");// get metodumun içierisne çalışacğaım endpoşntleri sytanx ıne uygun bir şekilde yazmalıyım.
+
 
         response.prettyPrint(); // like sout
 
@@ -71,6 +73,7 @@ public class Get05 extends TheMovieDBBaseURL {
         640146 olduğunu assert ediniz.
 
                 */
+
 
         response.then().
                 assertThat().

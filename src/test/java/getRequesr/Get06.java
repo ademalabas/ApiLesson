@@ -9,7 +9,8 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 public class Get06 extends GoRestCoBaseURL {
-/*
+
+    /*
         Given
             https://gorest.co.in/public/v2/todos/14091
         When
@@ -28,6 +29,7 @@ public class Get06 extends GoRestCoBaseURL {
 "status": "pending"
 }
  */
+
 
 
     @Test
@@ -55,6 +57,7 @@ public class Get06 extends GoRestCoBaseURL {
                 .when().get("/{todosPath}/{idPath}");// get metodumun içierisne çalışacğaım endpoşntleri sytanx ıne uygun bir şekilde yazmalıyım.
         response.prettyPrint(); // like sout
 
+
         // Step 4: Assertion operations
         /*
         Then
@@ -72,6 +75,7 @@ public class Get06 extends GoRestCoBaseURL {
 "status": "pending"
 }
  */
+
 
 // 1st way
        /* response.then().assertThat().
