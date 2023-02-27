@@ -5,6 +5,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
 
+import java.util.Collections;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
@@ -107,7 +108,12 @@ public class Get07 extends DummyRestApiBaseURL {
         assertEquals(7,idS.size());
 
 
+        // Test 3
 
+        List <String> nameListForSalary = jsonPath.getList("data.findAll{it.employee_salary<100000}.employee_name");
+        System.out.println(nameListForSalary);
+
+        Collections.sort(nameListForSalary);
 
 
 
