@@ -1,7 +1,7 @@
 package DarekeHoca;
 
 
-import baseURLs.JsonPlaseHoldrBaseURL;
+import baseURLs.JsonPlaseHolderBaseURL;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -9,7 +9,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-public class Get03 extends JsonPlaseHoldrBaseURL {
+public class Get03 extends JsonPlaseHolderBaseURL {
 
 
 /*
