@@ -1,11 +1,18 @@
 package getRequesr;
 
-import io.restassured.internal.RequestSpecificationImpl;
+import baseURLs.JsonPlaceHolderBaseURL;
+import io.restassured.response.Response;
 import org.junit.Test;
+import testData.JsonPlaceHolderTestData;
 
-public class Get09 {
+import java.util.HashMap;
 
-     /*
+import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
+
+public class Get09 extends JsonPlaceHolderBaseURL {
+
+ /*
 
     Given
 	   	     https://jsonplaceholder.typicode.com/todos/2
@@ -28,31 +35,57 @@ public class Get09 {
      */
 
 
-
     @Test
-    public void get07() {
+    public void get09(){
 
-        /*
-        1) Set URL
-        2) Set Expected Data
-        3) Send a Request
-        4) Assertion
-         */
+        //Step 1: SET URL
+        //https://jsonplaceholder.typicode.com/todos/2
+        specification.pathParams("todosPath","todos",
+                "idPath","2");
 
 
-        // STep 1: Set URL
-        //	   	     https://jsonplaceholder.typicode.com/todos/2
+        //Step 2: Set Expected Data
+        JsonPlaceHolderTestData jsonPlaceHolderTestData = new JsonPlaceHolderTestData();
+        HashMap<String,Object> expectedData = jsonPlaceHolderTestData.setUpDataTodos();
 
-        specification.pathParam("todosPath", "todos","idPath","2");
+        System.out.println("Expected Data: " + expectedData);
 
-
-        // Step 2: Expected Data (ignored)
 
 
         // Step 3: Send a request
 
+        Response response = given().
+                spec(specification).
+                when().
+                get("/{todosPath}/{idPath}");
+
+        System.out.println("Response: " );
+        response.prettyPrint();
+
+
+        // Step 4: Assertion
+
+
+        //1. Way
+        HashMap<String, Object> actualData = response.as(HashMap.class);   // De-Ser.
+        System.out.println("Actual Data: " + actualData);
+
+        assertEquals(expectedData.get("Server"),response.getHeader("Server"));
+        assertEquals(expectedData.get("StatusCode"),response.statusCode());
+        assertEquals(expectedData.get("id"),actualData.get("id"));
+        assertEquals(expectedData.get("completed"),actualData.get("completed"));
+        assertEquals(expectedData.get("title"),actualData.get("title"));
+
+
+
+
+        
+
+
+
 
     }
 
 
-    }
+
+}

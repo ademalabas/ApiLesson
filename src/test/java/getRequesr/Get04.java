@@ -1,6 +1,6 @@
 package getRequesr;
 
-import baseURLs.JsonPlaseHolderBaseURL;
+import baseURLs.JsonPlaceHolderBaseURL;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class Get04 extends JsonPlaseHolderBaseURL {
+public class Get04 extends JsonPlaceHolderBaseURL {
 
   /*
         Given

@@ -5,7 +5,7 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 
-public class JsonPlaseHolderBaseURL {
+public class JsonPlaceHolderBaseURL {
 
     protected RequestSpecification specification;
     // https://jsonplaceholder.typicode.com   ---->> Base URL
