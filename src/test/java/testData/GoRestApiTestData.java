@@ -1,5 +1,7 @@
 package testData;
 
+import java.util.HashMap;
+
 public class GoRestApiTestData {
 
 
@@ -8,4 +10,6 @@ public class GoRestApiTestData {
 
         return 422;
     }
+
+
 }

@@ -1,6 +1,15 @@
 package postRequest;
 
-public class Post02 {
+import baseURLs.GoRestCoBaseURL;
+import io.restassured.response.Response;
+import org.junit.Test;
+import testData.GoRestApiTestData;
+
+import java.util.HashMap;
+
+import static io.restassured.RestAssured.given;
+
+public class Post02 extends GoRestCoBaseURL {
     /*
 
        Given
@@ -32,15 +41,27 @@ public class Post02 {
 
 
 
+    @Test
+    public void post01() {
+
+        //Set URL
+        //https://gorest.co.in/public/v2/users
+        specification.pathParam("usersPath", "users");
 
 
+        //Set Expected Data
+        GoRestApiTestData goRestApiTestData = new GoRestApiTestData();
+      HashMap<String,String> reqBodyAndExpectedDataMap =goRestApiTestData.reqBodyAndExpectedData();
+
+        //Send a Request
+        Response response = given().
+                spec(specification).
+                when().
+                header("Authorization", "Bearer c0aa77eb8a368a7d991c8e10e6afb9756130abe80e29a6826477f8645165c7b0").
+                post("/{usersPath}");
 
 
-
-
-
-
-
+    }
 
 
 
