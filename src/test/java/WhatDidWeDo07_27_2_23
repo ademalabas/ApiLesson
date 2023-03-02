@@ -1,0 +1,19 @@
+What did we do yesterday? (01 March 2023)
+Day09
+
+-- Object Mapper
+
+Lib ----> pom.xml adding
+Jsont to Java
+
+-- header   ----> Auth. Bearer Token
+
+-- response ta POJO yu kullandık
+response obj. ile POJO yapısı bir biri ile match değilse
+annotation kullanıyorduk.    @JsonIgnoreProperties(ignoreUnknown = true)
+
+
+-- POST methodunda request body ----> payload
+
+
+-- ContentType.JSON --> contentType
