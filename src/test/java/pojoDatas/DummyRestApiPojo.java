@@ -1,5 +1,8 @@
 package pojoDatas;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class DummyRestApiPojo {
 
     /*
@@ -8,10 +11,10 @@ public class DummyRestApiPojo {
             "salary": "40000",
             "age": "27"
     }
-    
+
      */
-    
-    
+
+
     private String name;
     private String salary;
     private String age;
@@ -52,7 +55,7 @@ public class DummyRestApiPojo {
 
     @Override
     public String toString() {
-        return "DummyReatApiPojo{" +
+        return "{" +
                 "name='" + name + '\'' +
                 ", salary='" + salary + '\'' +
                 ", age='" + age + '\'' +
