@@ -13,6 +13,7 @@ import static org.junit.Assert.assertEquals;
 
 public class Put02 extends RestFullBookerHerOkuAppBaseURL {
 
+
        /*
         Given
 	        1) https://restful-booker.herokuapp.com/booking/37
