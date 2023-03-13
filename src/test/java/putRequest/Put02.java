@@ -31,6 +31,7 @@ public class Put02 extends RestFullBookerHerOkuAppBaseURL {
         3) Kullanıcı Auth. olarak ilk olarak  Header a Cookie ile daha sonra ise Basic Autoh ile  req bulunmalı.
             Authorization ==>>  Basic YWRtaW46cGFzc3dvcmQxMjM=
 
+
             Cookie =>>> token=001832eb39ba0ca
         When
 	 		Kullanıcı Put Reques ile request gönderir
