@@ -23,6 +23,7 @@ public class GoRestApiTestData {
 
 
 
+
     public HashMap<String,String > reqBodyAndExpectedData(String name, String gender, String email, String status ){
 
         HashMap<String ,String > reqBodyAndExpectedDataMap = new HashMap<>();
