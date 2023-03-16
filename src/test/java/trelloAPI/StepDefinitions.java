@@ -219,6 +219,71 @@ public class StepDefinitions {
                 statusCode(200);
     }
 
+    @When("Kullanıcı delete islemi yapabilmek icin ilgili url e DELETE metodu ile request atar {string},{string},{string},{string},{int}")
+    public void kullanıcı_delete_islemi_yapabilmek_icin_ilgili_url_e_DELETE_metodu_ile_request_atar(String idPath, String id, String cardsPath, String cards,
+                                                                                                    Integer cardsIdGET) {
+
+    }
+
+
+    @When("Kullanıcı delete islemi yapabilmek icin ilgili url e DELETE metodu ile request atar {string},{string},{string},{string},{string},{int}")
+    public void kullanıcı_delete_islemi_yapabilmek_icin_ilgili_url_e_DELETE_metodu_ile_request_atar(String idPath, String id, String cardsPath, String cards, String cardIdPath, Integer cardsIdGET) throws InterruptedException {
+
+
+        //#"https://api.trello.com/1/cards/{id}?key=APIKey&token=APIToken"
+        specification.pathParams(idPath,id,
+                        cardsPath,cards,
+                        cardIdPath,cardsID.get(cardsIdGET)).
+                queryParams("key",trelloApiTestData.getKey(),
+                        "token",trelloApiTestData.getToken());
+
+        System.out.println("CARDS ID: " + cardsID);
+        String idPathFormated = String.format("{%s}",idPath);
+        String cardsPathFormated = String.format("{%s}",cardsPath);
+        String cardIdPathFormated = String.format("{%s}",cardIdPath);
+
+        Thread.sleep(5000);
+
+        response = given().
+                spec(specification).
+                contentType(ContentType.JSON).
+                when().
+                delete("/" + idPathFormated + "/" + cardsPathFormated + "/" + cardIdPathFormated);
+
+
+        System.out.println("RESPONSE: ");
+        response.prettyPrint();
+    }
+
+    @Then("Kullanıcı basarili bir sekilde cardalrin delete edildigini verfiy eder")
+    public void kullanıcı_basarili_bir_sekilde_cardalrin_delete_edildigini_verfiy_eder() {
+        response.then().assertThat().statusCode(200);
+    }
+
+    //#"https://api.trello.com/1/boards/{id}?key=APIKey&token=APIToken"
+    @When("Kullanıcı board delete islemi icin ilgili url e DELETE metodu ile request atar {string},{string},{string},{string}")
+    public void kullanıcı_board_delete_islemi_icin_ilgili_url_e_DELETE_metodu_ile_request_atar(String idPath, String id, String boardsPath, String boards) {
+
+        specification.pathParams(idPath,id,
+                boardsPath,boards,
+                "boardIdePath",boardID).
+                queryParams("key",trelloApiTestData.getKey(),
+                        "token",trelloApiTestData.getToken());
+        String idPathFormated = String.format("{%s}",idPath);
+        String boardsPathFormated = String.format("{%s}",boardsPath);
+
+        response = given().spec(specification).contentType(ContentType.JSON).when().delete("/" + idPathFormated + "/" + boardsPathFormated + "/{boardIdePath}");
+    }
+
+
+
+
+    @Then("Kullanıcı basarili bir sekilde boardun delete edildigini verfiy eder")
+    public void kullanıcı_basarili_bir_sekilde_boardun_delete_edildigini_verfiy_eder() {
+        response.then().assertThat().statusCode(200);
+    }
+
+
 
 
 
