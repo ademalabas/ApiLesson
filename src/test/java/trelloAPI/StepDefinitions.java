@@ -21,11 +21,13 @@ public class StepDefinitions {
 
     TrelloApiTestData trelloApiTestData = new TrelloApiTestData();
 
-    Response response;
+    public static Response response;
 
-    String boardID;
+    public static String boardID;
 
-    JsonPath jsonPath;
+    public static JsonPath jsonPath;
+
+    public static String listID;
 
     @Given("Kullanıcı Trello icin Base URL set eder {string}")
     public void kullanıcı_Trello_icin_Base_URL_set_eder(String baseURL) {
@@ -83,6 +85,68 @@ public class StepDefinitions {
                 assertThat().
                 statusCode(200);
     }
+
+    @When("Kullanıcı list create edebilmek icin ilgili url e POST methodu ile request atar {string},{string},{string},{string}")
+    public void kullanıcı_list_create_edebilmek_icin_ilgili_url_e_POST_methodu_ile_request_atar(String idPath, String id, String listsPath, String list) {
+
+        //#https://api.trello.com/1/lists?name={name}&idBoard=5abbe4b7ddc1b351ef961414&key=APIKey&token=APIToken
+        specification.pathParams(idPath,id,
+                listsPath,list).
+                queryParams("name",trelloApiTestData.getListName(),
+                        "idBoard",boardID,
+                        "key",trelloApiTestData.getKey(),
+                        "token",trelloApiTestData.getToken());
+
+        String idPathFormated = String.format("{%s}",idPath);
+        String listsPathFormated = String.format("{%s}",listsPath);
+
+
+        response = given().
+                spec(specification).
+                contentType(ContentType.JSON).
+                when().
+                post("/" + idPathFormated + "/" + listsPathFormated);
+
+
+        System.out.println("Response Body: ");
+        response.prettyPrint();
+
+
+
+    }
+
+    @When("Kullanıcı list id yi alir")
+    public void kullanıcı_list_id_yi_alir() {
+        jsonPath = response.jsonPath();
+        listID = jsonPath.getString("id");
+
+    }
+    @Then("Kullanıcı listin basari ile create edidldigini verfiy eder")
+    public void kullanıcı_listin_basari_ile_create_edidldigini_verfiy_eder() {
+        response.
+                then().
+                assertThat().
+                statusCode(200);
+    }
+
+    @When("Kullanıcı card ccreate edebilmek icin ilgili url e POST metodu ile request atar {string},{string},{string},{string}")
+    public void kullanıcı_card_ccreate_edebilmek_icin_ilgili_url_e_POST_metodu_ile_request_atar(String string, String string2, String string3, String string4) {
+       
+    }
+
+    
+
+    @When("Kullanıcı card is yi alir")
+    public void kullanıcı_card_is_yi_alir() {
+        
+    }
+    @Then("Kullanıcı vard create edildigini verify eder")
+    public void kullanıcı_vard_create_edildigini_verify_eder() {
+       
+    }
+
+
+
 
 
 }
