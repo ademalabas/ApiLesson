@@ -2,8 +2,6 @@ package testData;
 
 public class TrelloApiTestData {
 
-
-
     //key  ---> string
     //token  --> string
     //name  ---> string
