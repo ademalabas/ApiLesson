@@ -26,6 +26,7 @@ public class Delete02 extends DummyRestApiBaseURL {
 		 And
 		    Response body in
 
+
 		    {
     "status": "success",
     "data": "719",
