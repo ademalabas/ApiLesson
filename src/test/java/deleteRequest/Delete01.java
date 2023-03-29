@@ -12,6 +12,7 @@ public class Delete01 extends RestFullBookerHerOkuAppBaseURL {
 
 
 
+
     /*
         Given
             1)https://restful-booker.herokuapp.com/booking/1
