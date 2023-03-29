@@ -10,6 +10,7 @@ public class JsonPlaceHolderBaseURL {
     protected RequestSpecification specification;
     // https://jsonplaceholder.typicode.com   ---->> Base URL
 
+
    @Before
     public void setUpBaseURL()  {
        specification = new RequestSpecBuilder().
