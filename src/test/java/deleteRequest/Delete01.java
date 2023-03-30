@@ -26,6 +26,7 @@ public class Delete01 extends RestFullBookerHerOkuAppBaseURL {
      */
 
 
+
 /*
 
 POST ile bookinge post etitğimiz zaaman delete edebiliriz.
