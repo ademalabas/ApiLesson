@@ -37,8 +37,10 @@ public class Post04 {
 
         **Alınan Token Headers ta Bearer Auth. olarak gçnderilecektir.**
 
+
     When
        Kullanıcı POST metodu ile request atar
+
 
        Kullanılacak Request Body:
         {
@@ -49,6 +51,7 @@ public class Post04 {
         "last_name":"",
         "email":"drakeF@gmail.com"
     }
+
 }
     Then
         Kullanıcı "Deposit Adress Creat" edildiğini verify eder.
