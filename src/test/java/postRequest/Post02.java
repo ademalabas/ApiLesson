@@ -12,6 +12,7 @@ import static io.restassured.RestAssured.given;
 
 public class Post02 extends GoRestCoBaseURL {
 
+
         /*
 
     Given
@@ -25,6 +26,7 @@ public class Post02 extends GoRestCoBaseURL {
   "email": "tenali.ramakrishna@15ce.com",
   "status": "active"
 }
+
     When
         Kullanıcı POST Methodu ile Request Gönderir
     Then
