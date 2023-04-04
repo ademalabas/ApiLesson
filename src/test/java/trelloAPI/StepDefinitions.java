@@ -25,8 +25,6 @@ public class StepDefinitions {
 
     TrelloApiTestData trelloApiTestData = new TrelloApiTestData();
 
-
-
     public static Response response;
 
     public static String boardID;
