@@ -23,6 +23,7 @@ public class Put01 extends JsonPlaceHolderBaseURL {
                  "completed": true
                }
         When
+
 	 		Kullanıcı Put Reques ile request gönderir
 	    Then
 	   	   Status code is 200
