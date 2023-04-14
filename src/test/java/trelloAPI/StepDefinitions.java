@@ -35,6 +35,7 @@ public class StepDefinitions {
 
     public static List<String> cardsID = new ArrayList<>();
 
+
     @Given("Kullanıcı Trello icin Base URL set eder {string}")
     public void kullanıcı_Trello_icin_Base_URL_set_eder(String baseURL) {
 
