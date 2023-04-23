@@ -5,6 +5,11 @@ import java.util.Map;
 
 public class BitPaceGetToken {
 
+
+
+
+
+
     /*
        {
     "merchant_code":"20625123425",
